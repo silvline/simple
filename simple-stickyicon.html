@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Simple Elegant Sticky Icon bar</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+body, html {height: 100%}  
+
+.bgimg, bgimg2 {
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.bgimg {background-image: url("bkgdtexture.gif")} 
+.bgimg2 {background-image: url("create.png")}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+ /* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  right: 0px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  visibility: hidden;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  background-color: #000;
+  opacity: 0.7;
+  font-size: 20px;
+}
+.icon-bar a:hover {
+  background-color: lightgray;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+</style>
+ 
+<body class="w3-white" style="max-width:1600px" onscroll="myFunction()">
+
+
+<!-- !front PAGE CONTENT! -->
+
+<div class="w3-main bgimg" style=" padding-top:100px" id="home">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large"></div>
+
+  <main role="main" class="w3-center">
+    <div class="row">
+      <div class="w3-text-white bold">
+        <a href="#create" class="w3-btn">
+          <h2>
+            <img src="clock.ico"> Create to Learn </h2>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="w3-text-white bold">
+        <a href="#learn" class="w3-btn">
+          <h2>
+            <img src="leaves.ico"> Learn and Grow</h2>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="w3-text-white bold">
+        <a href="#inspirations" class="w3-btn">
+          <h2>
+            <img src="photos.ico"> The inspirations </h2>
+        </a>
+      </div>
+    </div>
+  </main>
+</div>
+
+  <div class="w3-display-container w3-padding-1 w3-transparent w3-opacity w3-center" id="create" >
+    <div class="container">
+      <img src="create2.JPG" style="height: 100%; width:100%">
+      <div>
+        <h1 class="centered w3-text-white bold">
+          <b>Create to Learn</b> </div>
+        </h1>
+    </div>
+  </div>
+
+ 
+  <div class="w3-display-container w3-padding-1 w3-transparent-max w3-opacity w3-center" id="learn">
+      <div class="container">
+        <img src="learn2.jpg" style="min-height: 100%; width:100%">
+        <div>
+          <h2 class="centered w3-text-white bold">
+            <b>Learn and Grow</b> </div>
+          </h2>
+      </div>
+    </div>
+
+    <div class="w3-display-container w3-padding-1 w3-transparent w3-opacity w3-center" id="inspirations" >
+        <div class="container">
+          <img src="inspire2.jpg" style="height: 100%; width:100%">
+          <div>
+            <h1 class="centered w3-text-white bold">
+              <b>Inspirations. Appreciations. </b> </div>
+            </h1>
+        </div>
+      </div>
+
+      <div id="navbar" class="icon-bar navbar">
+        <a href="#create" >create</a>
+        <a href="#learn" >learn</a>
+        <a href="#inspirations" >inspire</a>
+        <a href="#" class="fa-podcast"><i class="fa fa-podcast"></i></a> 
+      </div>
+    
+<!-- End front page content -->
+</div>
+
+<!-- Create page -->
+
+
+
+<!-- Footer -->
+<footer class="w3-bottom w3-container w3-padding-64 w3-transparent w3-center w3-opacity w3-xlarge" > 
+<p class="w3-display-container w3-display-bottomright w3-container w3-medium">Life long learning @2019  </p>
+</footer>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+var createpage = document.getElementById("create");
+var sticky = createpage.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    document.getElementById("navbar").style.visibility = "visible"; 
+  } else {
+    document.getElementById("navbar").style.visibility = "hidden"; 
+  }
+}
+
+</script>
+
+</body>
+</html>
+
